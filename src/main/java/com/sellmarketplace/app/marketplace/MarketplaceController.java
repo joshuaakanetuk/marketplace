@@ -11,4 +11,9 @@ public class MarketplaceController {
     public String helloWorld() {
         return "Hello World";
     }
+
+    @GetMapping("/hello-world-bean")
+    public HelloWorldBean helloWorldBean() {
+        return new HelloWorldBean(String.format("Hello World! %s", System.currentTimeMillis()));
+    }
 }
