@@ -19,4 +19,6 @@ public class Inventory {
     @Column(nullable = false)
     private Integer quantity;
 
+
+
 }
