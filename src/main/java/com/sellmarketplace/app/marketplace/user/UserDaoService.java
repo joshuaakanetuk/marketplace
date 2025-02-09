@@ -1,4 +1,4 @@
-package com.sellmarketplace.app.marketplace;
+package com.sellmarketplace.app.marketplace.user;
 
 import org.springframework.stereotype.Component;
 
