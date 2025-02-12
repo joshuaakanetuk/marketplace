@@ -23,9 +23,9 @@ public class Product {
     @Column
     private String description;
 
-//    @ManyToOne
-//    @JoinColumn(name = "category_id", nullable = false)
-//    private Category category;
+    //    @ManyToOne
+    //    @JoinColumn(name = "category_id", nullable = false)
+    //    private Category category;
 
     @Column
     private int upc;
