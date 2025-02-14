@@ -1,8 +1,13 @@
 package com.sellmarketplace.app.marketplace.product;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.sellmarketplace.app.marketplace.category.Category;
+import io.hypersistence.utils.hibernate.type.json.JsonType;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.Type;
+
+import java.util.Map;
 
 @Data
 @Entity
@@ -26,6 +31,10 @@ public class Product {
     //    @ManyToOne
     //    @JoinColumn(name = "category_id", nullable = false)
     //    private Category category;
+
+    @Type(JsonType.class)
+    @Column(columnDefinition = "JSONB")
+    private Map<String, Object> specifications;
 
     @Column
     private int upc;
