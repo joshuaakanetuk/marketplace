@@ -6,7 +6,7 @@ I need to be able to list a product in the future (with or without cron)
 
 - META:
     - create eBay token flow (kinda) ✅ 
-  - create email/password flow
+  ~~- create email/password flow~~
   - create omnisearch (ebay / products)
 - products:
     - create view to add product from imported item.
