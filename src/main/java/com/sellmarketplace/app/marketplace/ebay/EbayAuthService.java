@@ -45,8 +45,6 @@ public class EbayAuthService {
                 .bodyToMono(JsonNode.class)
                 .map(json -> json.get("access_token").asText())
                 .block();
-
-        System.out.println("New eBay Access Token: " + accessToken);
     }
 
     public String getAccessToken() {
