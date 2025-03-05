@@ -51,7 +51,6 @@ public class EbayAuthService {
         if (accessToken == null) {
             refreshAccessToken();
         }
-        System.out.println(accessToken);
         return accessToken;
     }
 }
