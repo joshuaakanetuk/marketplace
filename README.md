@@ -9,6 +9,7 @@ I need to be able to list a product in the future (with or without cron)
       - create model for creds to link to users.
   ~~- create email/password flow~~
   - create omnisearch (ebay / products)
+  - accounts
 - products:
     - create view to add product from imported item.
       - Add ability to upload images for pr
