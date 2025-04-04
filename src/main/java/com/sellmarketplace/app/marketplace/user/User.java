@@ -1,63 +1,22 @@
 package com.sellmarketplace.app.marketplace.user;
 
+import jakarta.persistence.*;
+import lombok.Data;
+
 import java.time.LocalDate;
 
+@Data
+@Entity
 public class User {
-    private String username;
-    private Integer id;
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "username='" + username + '\'' +
-                ", id=" + id +
-                ", email='" + email + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
-                '}';
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String email;
+    private String password; // hashed
 
-    public User(String username, Integer id, String email, LocalDate dateOfBirth) {
-        this.username = username;
-        this.id = id;
-        this.email = email;
-        this.dateOfBirth = dateOfBirth;
-    }
+    private String name;
 
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    private LocalDate dateOfBirth;
-
-
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+//    private List<LinkedAccount> linkedAccounts = new ArrayList<>();
 }
