@@ -1,9 +1,12 @@
 package com.sellmarketplace.app.marketplace.user;
 
+import com.sellmarketplace.app.marketplace.account.LinkedAccount;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -17,6 +20,6 @@ public class User {
 
     private String name;
 
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-//    private List<LinkedAccount> linkedAccounts = new ArrayList<>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<LinkedAccount> linkedAccounts = new ArrayList<>();
 }
