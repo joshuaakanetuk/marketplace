@@ -54,28 +54,28 @@ public class DataSeeder implements CommandLineRunner {
             productRepository.save(product2);
 
             // Create First Listing
-            Listing listing1 = new Listing();
-            listing1.setProduct(product1);
-            listing1.setPrice(29.99);
-            listing1.setListingType("Fixed Price");
-            listing1.setDuration(30);
-            listing1.setQuantity(10);
-            listing1.setShippingDetails("{\"shippingService\": \"Standard Shipping\", \"cost\": 5.99}");
-            listing1.setPaymentMethods("{\"methods\": [\"PayPal\", \"Credit Card\"]}");
-            listing1.setReturnsPolicy("{\"returnsAccepted\": true, \"days\": 30}");
-            listingRepository.save(listing1);
-
-            // Create Second Listing
-            Listing listing2 = new Listing();
-            listing2.setProduct(product2);
-            listing2.setPrice(89.99);
-            listing2.setListingType("Fixed Price");
-            listing2.setDuration(30);
-            listing2.setQuantity(5);
-            listing2.setShippingDetails("{\"shippingService\": \"Free Shipping\", \"cost\": 0}");
-            listing2.setPaymentMethods("{\"methods\": [\"PayPal\", \"Credit Card\"]}");
-            listing2.setReturnsPolicy("{\"returnsAccepted\": true, \"days\": 30}");
-            listingRepository.save(listing2);
+//            Listing listing1 = new Listing();
+//            listing1.setProduct(product1);
+//            listing1.setPrice(29.99);
+//            listing1.setListingType("Fixed Price");
+//            listing1.setDuration(30);
+//            listing1.setQuantity(10);
+//            listing1.setShippingDetails("{\"shippingService\": \"Standard Shipping\", \"cost\": 5.99}");
+//            listing1.setPaymentMethods("{\"methods\": [\"PayPal\", \"Credit Card\"]}");
+//            listing1.setReturnsPolicy("{\"returnsAccepted\": true, \"days\": 30}");
+//            listingRepository.save(listing1);
+//
+//            // Create Second Listing
+//            Listing listing2 = new Listing();
+//            listing2.setProduct(product2);
+//            listing2.setPrice(89.99);
+//            listing2.setListingType("Fixed Price");
+//            listing2.setDuration(30);
+//            listing2.setQuantity(5);
+//            listing2.setShippingDetails("{\"shippingService\": \"Free Shipping\", \"cost\": 0}");
+//            listing2.setPaymentMethods("{\"methods\": [\"PayPal\", \"Credit Card\"]}");
+//            listing2.setReturnsPolicy("{\"returnsAccepted\": true, \"days\": 30}");
+//            listingRepository.save(listing2);
 
             System.out.println("Development data seeded.");
         } else {

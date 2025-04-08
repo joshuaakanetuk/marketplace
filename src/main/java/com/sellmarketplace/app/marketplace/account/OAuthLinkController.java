@@ -17,11 +17,13 @@ import org.springframework.web.server.ResponseStatusException;
 @RequestMapping("/account")
 public class OAuthLinkController {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
+    private final LinkedAccountRepository linkedAccountRepository;
 
-    @Autowired
-    private LinkedAccountRepository linkedAccountRepository;
+    public OAuthLinkController(UserRepository userRepository, LinkedAccountRepository linkedAccountRepository) {
+        this.userRepository = userRepository;
+        this.linkedAccountRepository = linkedAccountRepository;
+    }
 
     @PostMapping("/link-oauth")
     public String linkOAuthAccount(@AuthenticationPrincipal UserDetails userDetails, OAuth2AuthenticationToken token) {

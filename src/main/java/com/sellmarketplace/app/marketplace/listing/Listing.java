@@ -1,8 +1,13 @@
 package com.sellmarketplace.app.marketplace.listing;
 
 import com.sellmarketplace.app.marketplace.product.Product;
+import io.hypersistence.utils.hibernate.type.json.JsonType;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.Type;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Data
 @Entity
@@ -27,12 +32,15 @@ public class Listing {
 
     private Integer quantity;
 
-    @Column(columnDefinition = "JSONB")
-    private String shippingDetails;
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private Map<String, String> shippingDetails = new HashMap<>();
 
-    @Column(columnDefinition = "JSONB")
-    private String paymentMethods;
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private Map<String, String> paymentMethods = new HashMap<>();
 
-    @Column(columnDefinition = "JSONB")
-    private String returnsPolicy;
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private Map<String, String> returnsPolicy = new HashMap<>();
 }
