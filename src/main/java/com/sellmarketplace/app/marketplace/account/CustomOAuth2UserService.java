@@ -23,8 +23,9 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
         OAuth2User oAuth2User = new DefaultOAuth2UserService().loadUser(userRequest);
 
-        String provider = userRequest.getClientRegistration().getRegistrationId(); // e.g. "google"
-        String providerUserId = oAuth2User.getAttribute("sub");
+        String provider = userRequest.getClientRegistration().getRegistrationId(); // "ebay"
+        String providerUserId = oAuth2User.getAttribute("username"); // may also be "user_id" or "email"
+        System.out.println("eBay OAuth2 attributes: " + oAuth2User.getAttributes());
 
         // Look up linked account
         LinkedAccount linkedAccount = linkedAccountRepository
